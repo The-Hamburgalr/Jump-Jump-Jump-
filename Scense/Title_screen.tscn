@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bdpmmmb6o13ma"]
+
+[ext_resource type="Script" uid="uid://jcppyugmv7tl" path="res://scripts/Start_Screen_Buttons.gd" id="1_4d7no"]
+
+[node name="Node2D" type="Node2D" unique_id=419748219]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=839858638]
+
+[node name="Control" type="Control" parent="." unique_id=294504914]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4d7no")
+
+[node name="Start" type="Button" parent="Control" unique_id=670592146]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 445.0
+offset_right = 363.0
+offset_bottom = 520.0
+text = "Start"
+
+[node name="How to Play" type="Button" parent="Control" unique_id=977248125]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 444.0
+offset_right = 633.0
+offset_bottom = 519.0
+text = "How to"
+
+[node name="Quit" type="Button" parent="Control" unique_id=1799544407]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 444.0
+offset_right = 910.0
+offset_bottom = 518.0
+text = "Quit"
+
+[connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/How to Play" to="Control" method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="Control/Quit" to="Control" method="_on_quit_pressed"]
