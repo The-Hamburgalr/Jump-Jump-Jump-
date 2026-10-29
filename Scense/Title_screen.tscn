@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bdpmmmb6o13ma"]
 
+[ext_resource type="Texture2D" uid="uid://d0bpyn4fo03ir" path="res://Images/Title screen.png" id="1_0siem"]
 [ext_resource type="Script" uid="uid://jcppyugmv7tl" path="res://scripts/Start_Screen_Buttons.gd" id="1_4d7no"]
 
 [node name="Node2D" type="Node2D" unique_id=419748219]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=839858638]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2096408676]
+texture_filter = 1
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("1_0siem")
 
 [node name="Control" type="Control" parent="." unique_id=294504914]
 layout_mode = 3
@@ -14,27 +19,30 @@ offset_bottom = 40.0
 script = ExtResource("1_4d7no")
 
 [node name="Start" type="Button" parent="Control" unique_id=670592146]
+texture_filter = 1
 layout_mode = 0
-offset_left = 108.0
-offset_top = 445.0
-offset_right = 363.0
-offset_bottom = 520.0
+offset_left = 124.0
+offset_top = 455.0
+offset_right = 379.0
+offset_bottom = 530.0
 text = "Start"
 
 [node name="How to Play" type="Button" parent="Control" unique_id=977248125]
+texture_filter = 1
 layout_mode = 0
-offset_left = 379.0
-offset_top = 444.0
-offset_right = 633.0
-offset_bottom = 519.0
-text = "How to"
+offset_left = 461.0
+offset_top = 451.0
+offset_right = 715.0
+offset_bottom = 526.0
+text = "How to play"
 
 [node name="Quit" type="Button" parent="Control" unique_id=1799544407]
+texture_filter = 1
 layout_mode = 0
-offset_left = 656.0
-offset_top = 444.0
-offset_right = 910.0
-offset_bottom = 518.0
+offset_left = 810.0
+offset_top = 447.0
+offset_right = 1064.0
+offset_bottom = 521.0
 text = "Quit"
 
 [connection signal="pressed" from="Control/Start" to="Control" method="_on_start_pressed"]
