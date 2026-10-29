@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bmr5e5fyym6w6"]
+[gd_scene format=3 uid="uid://bmr5e5fyym6w6"]
 
 [ext_resource type="Texture2D" uid="uid://6yptol8uupcj" path="res://Images/tilesheet/tilesheet_1.png" id="1_sb3xs"]
 
@@ -58,7 +58,4 @@ sources/0 = SubResource("TileSetAtlasSource_xce0i")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2048144799]
 texture_filter = 1
-texture_repeat = 2
-tile_map_data = PackedByteArray("AAD8////AAABAAYAAAD8/wAAAAABAAcAAAD8/wEAAAABAAgAAAD9////AAACAAYAAAD9/wAAAAACAAcAAAD9/wEAAAACAAgAAAD+////AAADAAYAAAD+/wAAAAADAAcAAAD+/wEAAAADAAgAAAD/////AAAEAAYAAAD//wAAAAAEAAcAAAD//wEAAAAEAAgAAAAAAP//AAAFAAYAAAAAAAAAAAAFAAcAAAAAAAEAAAAFAAgAAAABAP//AAAGAAYAAAABAAAAAAAGAAcAAAABAAEAAAAGAAgAAAACAP//AAAHAAYAAAACAAAAAAAHAAcAAAACAAEAAAAHAAgAAAADAP//AAAIAAYAAAADAAAAAAAIAAcAAAADAAEAAAAIAAgAAAA=")
 tile_set = SubResource("TileSet_3v22c")
-rendering_quadrant_size = 20
