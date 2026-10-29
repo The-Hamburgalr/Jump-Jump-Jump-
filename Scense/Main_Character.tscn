@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://doonidfhyqtre"]
 
 [ext_resource type="Texture2D" uid="uid://dxjmytxqtu3sf" path="res://Images/Animation/Zombie_Idle.png" id="1_06u5b"]
+[ext_resource type="Script" uid="uid://bhi8q6y3y8qhi" path="res://scripts/main_character.gd" id="1_kqnco"]
 [ext_resource type="Texture2D" uid="uid://c8nfa5h5sjs6j" path="res://Images/Animation/Zombie_walk.png" id="1_syshy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yklq2"]
@@ -200,6 +201,7 @@ animations = [{
 size = Vector2(18, 26)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1584011571]
+script = ExtResource("1_kqnco")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1685168116]
 texture_filter = 1
