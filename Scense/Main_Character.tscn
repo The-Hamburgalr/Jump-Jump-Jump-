@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxjmytxqtu3sf" path="res://Images/Animation/Zombie_Idle.png" id="1_06u5b"]
 [ext_resource type="Script" uid="uid://bhi8q6y3y8qhi" path="res://scripts/main_character.gd" id="1_kqnco"]
 [ext_resource type="Texture2D" uid="uid://c8nfa5h5sjs6j" path="res://Images/Animation/Zombie_walk.png" id="1_syshy"]
+[ext_resource type="PackedScene" uid="uid://dvx3ojwa8buf8" path="res://Scense/hud.tscn" id="2_7wdm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yklq2"]
 atlas = ExtResource("1_06u5b")
@@ -104,6 +105,10 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("1_syshy")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_prqav"]
+atlas = ExtResource("1_06u5b")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_so1ba"]
 animations = [{
 "frames": [{
@@ -194,24 +199,41 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walking",
-"speed": 8.0
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prqav")
+}],
+"loop": 1,
+"name": &"standing",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v22c"]
 size = Vector2(18, 26)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1584011571]
+scale = Vector2(3, 3)
 script = ExtResource("1_kqnco")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=920451035]
+
+[node name="Node2D" parent="CanvasLayer" unique_id=1504885977 instance=ExtResource("2_7wdm5")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1685168116]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_so1ba")
-animation = &"Jump"
+animation = &"Walking"
 autoplay = "Idle"
-frame = 5
-frame_progress = 0.58854634
+frame_progress = 0.35311696
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1880819850]
 visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_3v22c")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=200595243]
+offset = Vector2(0, -93)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
