@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://dvx3ojwa8buf8"]
 
 [ext_resource type="FontFile" uid="uid://c4pk6b72td4hl" path="res://upheavtt.ttf" id="1_4m27e"]
+[ext_resource type="Script" uid="uid://ujln725blw2v" path="res://scripts/hud.gd" id="1_fxjxu"]
 [ext_resource type="Texture2D" uid="uid://bdv0w5p5da7pw" path="res://Images/Brain.png" id="2_rwwox"]
 
-[node name="Node2D" type="Node2D" unique_id=791185218]
+[node name="Node2D" type="Control" unique_id=1504885977]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fxjxu")
 metadata/_edit_vertical_guides_ = [41.0]
 
 [node name="Label" type="Label" parent="." unique_id=143559012]
 texture_filter = 1
+layout_mode = 0
 offset_left = 132.0
 offset_top = 9.0
 offset_right = 249.0
@@ -19,6 +24,7 @@ vertical_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1568177147]
 texture_filter = 1
+layout_mode = 0
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 340.0
@@ -33,6 +39,7 @@ texture = ExtResource("2_rwwox")
 
 [node name="Label2" type="Label" parent="." unique_id=1603238404]
 texture_filter = 1
+layout_mode = 0
 offset_left = 86.0
 offset_top = 98.0
 offset_right = 336.0

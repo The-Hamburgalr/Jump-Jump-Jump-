@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 
+[autoload]
+
+DudeEnemy="*uid://dwwck182ben3u"
+
 [display]
 
 window/size/mode=2
