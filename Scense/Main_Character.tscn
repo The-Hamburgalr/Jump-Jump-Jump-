@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dxjmytxqtu3sf" path="res://Images/Animation/Zombie_Idle.png" id="1_06u5b"]
 [ext_resource type="Script" uid="uid://bhi8q6y3y8qhi" path="res://scripts/main_character.gd" id="1_kqnco"]
 [ext_resource type="Texture2D" uid="uid://c8nfa5h5sjs6j" path="res://Images/Animation/Zombie_walk.png" id="1_syshy"]
+[ext_resource type="PackedScene" uid="uid://dvx3ojwa8buf8" path="res://Scense/hud.tscn" id="4_7wdm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yklq2"]
 atlas = ExtResource("1_06u5b")
@@ -198,7 +199,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"Walking",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -213,13 +214,15 @@ animations = [{
 size = Vector2(18, 26)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1584011571]
+scale = Vector2(3, 3)
 script = ExtResource("1_kqnco")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1685168116]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_so1ba")
-animation = &"standing"
+animation = &"Walking"
 autoplay = "Idle"
+frame_progress = 0.35311696
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1880819850]
 position = Vector2(0, 3)
@@ -227,6 +230,8 @@ shape = SubResource("RectangleShape2D_3v22c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=200595243]
 offset = Vector2(0, -93)
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Node2D" parent="Camera2D" unique_id=791185218 instance=ExtResource("4_7wdm5")]
+scale = Vector2(0.975182, 0.9567183)

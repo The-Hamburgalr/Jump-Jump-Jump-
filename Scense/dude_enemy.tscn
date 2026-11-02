@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dwwck182ben3u"]
+
+[ext_resource type="Texture2D" uid="uid://8w86gkm6vcvl" path="res://Images/dude.png" id="1_6kfah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_so1ba"]
+size = Vector2(38, 58)
+
+[node name="Area2D" type="Area2D" unique_id=550122581]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058777172]
+texture_filter = 1
+texture = ExtResource("1_6kfah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183839886]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_so1ba")
