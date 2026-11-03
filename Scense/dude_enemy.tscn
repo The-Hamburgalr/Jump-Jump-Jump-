@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://dxxfsb1spo0fe" path="res://scripts/dude_enemy.gd" id="1_83xwy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so1ba"]
-size = Vector2(38, 58)
+size = Vector2(38, 52)
 
-[node name="Area2D" type="Area2D" unique_id=550122581]
+[node name="dude_enemy" type="Area2D" unique_id=550122581]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_83xwy")
 
@@ -15,8 +15,11 @@ texture_filter = 1
 texture = ExtResource("1_6kfah")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1183839886]
-visible = false
-position = Vector2(-1, 3)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_so1ba")
 
+[node name="Timer" type="Timer" parent="." unique_id=1557569629]
+autostart = true
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

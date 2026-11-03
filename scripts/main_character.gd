@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -600.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
@@ -39,3 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 
 	move_and_slide()
+
+
+func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.
