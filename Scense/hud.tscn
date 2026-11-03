@@ -22,7 +22,7 @@ text = "Health"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1568177147]
+[node name="Health bar" type="ProgressBar" parent="." unique_id=1568177147]
 texture_filter = 1
 layout_mode = 0
 offset_left = 40.0
