@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bhi8q6y3y8qhi" path="res://scripts/main_character.gd" id="1_kqnco"]
 [ext_resource type="Texture2D" uid="uid://c8nfa5h5sjs6j" path="res://Images/Animation/Zombie_walk.png" id="1_syshy"]
 [ext_resource type="PackedScene" uid="uid://dvx3ojwa8buf8" path="res://Scense/hud.tscn" id="2_7wdm5"]
+[ext_resource type="Texture2D" uid="uid://b410p6teewcwg" path="res://Images/Animation/Zombie_hurt.png" id="5_nn3md"]
+[ext_resource type="AudioStream" uid="uid://dddfajr0b64au" path="res://sounds/jump.wav" id="6_5v2ql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yklq2"]
 atlas = ExtResource("1_06u5b")
@@ -105,6 +107,26 @@ region = Rect2(160, 0, 32, 32)
 atlas = ExtResource("1_syshy")
 region = Rect2(192, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xrlp"]
+atlas = ExtResource("5_nn3md")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbfa1"]
+atlas = ExtResource("5_nn3md")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiysn"]
+atlas = ExtResource("5_nn3md")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yd8mh"]
+atlas = ExtResource("5_nn3md")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dct4a"]
+atlas = ExtResource("5_nn3md")
+region = Rect2(128, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_prqav"]
 atlas = ExtResource("1_06u5b")
 region = Rect2(0, 0, 32, 32)
@@ -203,6 +225,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7xrlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbfa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiysn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yd8mh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dct4a")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_prqav")
 }],
 "loop": 1,
@@ -216,6 +258,7 @@ size = Vector2(18, 26)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1584011571]
 scale = Vector2(3, 3)
 script = ExtResource("1_kqnco")
+metadata/_edit_horizontal_guides_ = [36.0, 33.0, 39.0, 42.0, 45.0, 30.0, 27.0, 24.0, 21.0, 18.0, 15.0, 12.0, 9.0, 6.0, 3.0, 0.0, -3.0, -6.0, -9.0, -12.0, -15.0, -18.0, -21.0, -24.0, -27.0, -30.0, -33.0, -36.0, -39.0, -42.0, -45.0, -48.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=920451035]
 
@@ -224,9 +267,8 @@ script = ExtResource("1_kqnco")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1685168116]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_so1ba")
-animation = &"Walking"
+animation = &"hurt"
 autoplay = "Idle"
-frame_progress = 0.35311696
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1880819850]
 visible = false
@@ -237,3 +279,6 @@ shape = SubResource("RectangleShape2D_3v22c")
 offset = Vector2(0, -93)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=632398458]
+stream = ExtResource("6_5v2ql")

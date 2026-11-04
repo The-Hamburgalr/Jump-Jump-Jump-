@@ -14,7 +14,7 @@ func Health_calc(damage):
 	Health -= damage
 	if Health <= 0:
 		get_tree().change_scene_to_file("res://Scense/death_menu.tscn")
-	animated_sprite_2d.animation = "hurt"
+	Globals.hurt_animation = true
 	health_bar.value = Health
 
 func _process(delta: float) -> void:
