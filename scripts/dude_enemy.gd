@@ -1,11 +1,12 @@
 extends Area2D
 var damage = 15
-var hurt: bool = false
 const SPEED = 100
 var direction = -1.0
-@onready var area_2d: Area2D = $"."
+@onready var dude_enemy: Area2D = $"."
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var timer: Timer = $Timer
+
+
 
 func _ready() -> void:
 	pass
@@ -17,10 +18,10 @@ func _on_timer_timeout() -> void:
 	direction *= -1
 	sprite_2d.flip_h = !sprite_2d.flip_h
 
-func _on_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	hurt = true
-	await get_tree().create_timer(1.5).timeout
-	hurt = false
-	
-	
-	
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "CharacterBody2D":
+		Globals.hurt_dude_enemy = true
+		await wait(3)

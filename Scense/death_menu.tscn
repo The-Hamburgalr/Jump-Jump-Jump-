@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dxsayl53qmof2"]
+
+[ext_resource type="FontFile" uid="uid://c4pk6b72td4hl" path="res://upheavtt.ttf" id="1_w0ql2"]
+[ext_resource type="Script" uid="uid://dlorhj0qowu8c" path="res://scripts/button_control_death_menu.gd" id="2_dbgx2"]
+
+[node name="death_menu" type="Node2D" unique_id=729096793]
+metadata/_edit_vertical_guides_ = [1151.0, 1152.0]
+
+[node name="Label" type="Label" parent="." unique_id=2059008377]
+offset_left = 375.0
+offset_top = 198.0
+offset_right = 784.0
+offset_bottom = 274.0
+theme_override_fonts/font = ExtResource("1_w0ql2")
+theme_override_font_sizes/font_size = 50
+text = "You died"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_control" type="Control" parent="." unique_id=1834956211]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_dbgx2")
+
+[node name="Button" type="Button" parent="button_control" unique_id=420586914]
+texture_filter = 1
+layout_mode = 0
+offset_left = 332.0
+offset_top = 339.0
+offset_right = 803.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("1_w0ql2")
+theme_override_font_sizes/font_size = 50
+text = "main menu"
+
+[connection signal="pressed" from="button_control/Button" to="button_control" method="_on_button_pressed"]
