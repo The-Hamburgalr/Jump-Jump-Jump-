@@ -3,16 +3,28 @@ extends CharacterBody2D
 
 const SPEED = 300
 const JUMP_VELOCITY = -600.0
+var distance_from_dude_enemey: float
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jumpsound: AudioStreamPlayer2D = $Jumpsound
 
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("attack"):
+		attack()
+		await Globals.wait(2.5)
+		
 	if Globals.hurt_animation == true:
 		animated_sprite_2d.animation = "hurt"
 		
 		print('hurt')
 		Globals.hurt_animation = false
+
+func attack():
+	animated_sprite_2d.animation = "attack"
+	distance_from_dude_enemey = position.x - Globals.dude_enemy_x
+	if distance_from_dude_enemey <= 4.0:
+		Globals.player_hurt_dude_enemy = true
+		await Globals.wait(2.5)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

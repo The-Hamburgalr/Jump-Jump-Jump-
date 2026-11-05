@@ -9,6 +9,7 @@ size = Vector2(38, 52)
 [node name="dude_enemy" type="Area2D" unique_id=550122581]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_83xwy")
+health = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058777172]
 texture_filter = 1
